@@ -110,6 +110,7 @@ const Competences = () => {
             >
               {items.map(({ icon, title, description }) => (
                 <Card
+                  key={`key_${title}`}
                   icon={staticAsset(icon)}
                   title={title}
                   description={description}
