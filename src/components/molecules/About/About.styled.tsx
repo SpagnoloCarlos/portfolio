@@ -11,10 +11,16 @@ export const StyledAboutContainer = styled.section(
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
-      h1 {
-        font-size: 36px;
-        text-align: center;
+      & > div > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        h1 {
+          font-size: 36px;
+          text-align: center;
+        }
       }
     }
   `
@@ -40,8 +46,8 @@ export const StyledAboutContent = styled.div(
       display: flex;
       align-items: center;
       p {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 19px;
+        line-height: 22px;
         text-align: center;
       }
       span {
@@ -55,6 +61,16 @@ export const StyledAboutContent = styled.div(
       span:last-child {
         align-self: flex-end;
         transform: rotate(135deg);
+      }
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 2rem 0;
+        p {
+          text-align: start;
+          text-indent: 40px;
+        }
       }
     }
   `

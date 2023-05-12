@@ -2,19 +2,38 @@ import styled, { css } from "styled-components";
 
 export const StyledContactContainer = styled.section`
   display: flex;
-  background-color: #0a0d13;
+  /* background-color: #0a0d13; */
+  background: linear-gradient(
+    180deg,
+    rgba(10, 13, 19, 1) 50%,
+    rgba(214, 140, 56, 1) 100%
+  );
   min-height: 100vh;
+  padding: 2rem 0;
   & > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* gap: 2rem; */
-    padding: 2rem 0;
-    & > h1 {
-      font-size: 36px;
-      text-align: center;
+    & > div {
+      width: 100%;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        & > h1 {
+          font-size: 36px;
+          text-align: center;
+        }
+      }
     }
+  }
+  canvas {
+    position: absolute;
+    width: 100% !important;
+    height: calc(100vh - 81px) !important;
   }
 `;
 
@@ -54,7 +73,7 @@ export const StyledContactTextArea = styled.div(
       font-size: 16px;
       /* padding: 2px 5px 8px 5px; */
       margin-left: 1rem;
-      background-color: #0a0d13;
+      background-color: transparent;
       border-radius: 10px;
       width: max-content;
     }

@@ -4,12 +4,17 @@ export const StyledCompetencesContainer = styled.section`
   display: flex;
   background-color: #070a10;
   min-height: 100vh;
+  padding: 2rem 0;
   & > div {
-    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    & > div > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
     h1 {
       font-size: 36px;
       text-align: center;

@@ -3,7 +3,8 @@ import styled, { css } from "styled-components";
 export const StyledHeroContainer = styled.section(
   ({ theme }) => css`
     display: flex;
-    min-height: calc(100vh - 81px);
+    min-height: 100vh;
+    overflow: hidden;
     & > div {
       display: flex;
       align-items: center;
@@ -12,6 +13,11 @@ export const StyledHeroContainer = styled.section(
       @media (max-width: ${theme.breakpoints.small}) {
         flex-direction: column;
       }
+    }
+    canvas {
+      position: absolute;
+      width: 100% !important;
+      height: calc(100vh - 81px) !important;
     }
   `
 );
