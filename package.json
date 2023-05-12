@@ -18,10 +18,8 @@
     "formik": "^2.2.9",
     "next": "13.4.1",
     "react": "18.2.0",
-    "react-awesome-reveal": "^4.2.3",
     "react-dom": "18.2.0",
     "react-multi-carousel": "^2.8.3",
-    "react-particle-backgrounds": "^1.0.4",
     "react-scroll": "^1.8.9",
     "styled-components": "^5.3.10",
     "typescript": "5.0.4"

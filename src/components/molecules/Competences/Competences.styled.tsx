@@ -9,7 +9,7 @@ export const StyledCompetencesContainer = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    & > div > div {
+    & > div {
       display: flex;
       flex-direction: column;
       justify-content: center;

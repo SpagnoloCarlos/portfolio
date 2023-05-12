@@ -2,12 +2,7 @@ import styled, { css } from "styled-components";
 
 export const StyledContactContainer = styled.section`
   display: flex;
-  /* background-color: #0a0d13; */
-  background: linear-gradient(
-    180deg,
-    rgba(10, 13, 19, 1) 50%,
-    rgba(214, 140, 56, 1) 100%
-  );
+  background-color: #0a0d13;
   min-height: 100vh;
   padding: 2rem 0;
   & > div {
@@ -17,23 +12,16 @@ export const StyledContactContainer = styled.section`
     justify-content: center;
     & > div {
       width: 100%;
-      & > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        & > h1 {
-          font-size: 36px;
-          text-align: center;
-        }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      & > h1 {
+        font-size: 36px;
+        text-align: center;
       }
     }
-  }
-  canvas {
-    position: absolute;
-    width: 100% !important;
-    height: calc(100vh - 81px) !important;
   }
 `;
 

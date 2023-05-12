@@ -7,7 +7,6 @@ import Card from "@/components/atoms/Card/Card.component";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Layout from "@/components/atoms/Layout/Layout.component";
-import { Fade } from "react-awesome-reveal";
 
 const Competences = () => {
   const responsive = {
@@ -88,39 +87,37 @@ const Competences = () => {
   return (
     <StyledCompetencesContainer id="competences">
       <Layout>
-        <Fade delay={500}>
-          <div>
-            <h1>Competences</h1>
-            <StyledCompetencesLogos>
-              <Carousel
-                swipeable={true}
-                draggable={true}
-                showDots={false}
-                arrows={true}
-                responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={true}
-                keyBoardControl={true}
-                customTransition="transform 500ms ease-in-out"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                itemClass="carousel-item-style"
-                dotListClass="custom-dot-list-style"
-                renderArrowsWhenDisabled={true}
-              >
-                {items.map(({ icon, title, description }) => (
-                  <Card
-                    key={`key_${title}`}
-                    icon={staticAsset(icon)}
-                    title={title}
-                    description={description}
-                  />
-                ))}
-              </Carousel>
-            </StyledCompetencesLogos>
-          </div>
-        </Fade>
+        <div>
+          <h1>Competences</h1>
+          <StyledCompetencesLogos>
+            <Carousel
+              swipeable={true}
+              draggable={true}
+              showDots={false}
+              arrows={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              autoPlay={true}
+              keyBoardControl={true}
+              customTransition="transform 500ms ease-in-out"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              itemClass="carousel-item-style"
+              dotListClass="custom-dot-list-style"
+              renderArrowsWhenDisabled={true}
+            >
+              {items.map(({ icon, title, description }) => (
+                <Card
+                  key={`key_${title}`}
+                  icon={staticAsset(icon)}
+                  title={title}
+                  description={description}
+                />
+              ))}
+            </Carousel>
+          </StyledCompetencesLogos>
+        </div>
       </Layout>
     </StyledCompetencesContainer>
   );

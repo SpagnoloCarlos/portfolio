@@ -11,7 +11,7 @@ export const StyledAboutContainer = styled.section(
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      & > div > div {
+      & > div {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -39,7 +39,7 @@ export const StyledAboutContent = styled.div(
       align-items: center;
       justify-content: center;
       & > img {
-        width: 90%;
+        width: 75%;
       }
     }
     & > div:last-of-type {
@@ -65,8 +65,8 @@ export const StyledAboutContent = styled.div(
       .text {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        padding: 2rem 0;
+        gap: 8px;
+        padding: 1rem 0;
         p {
           text-align: start;
           text-indent: 40px;

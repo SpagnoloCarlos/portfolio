@@ -14,11 +14,6 @@ export const StyledHeroContainer = styled.section(
         flex-direction: column;
       }
     }
-    canvas {
-      position: absolute;
-      width: 100% !important;
-      height: calc(100vh - 81px) !important;
-    }
   `
 );
 
