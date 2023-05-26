@@ -22,14 +22,10 @@ export const StyledTextInputGroup = styled.div(
 );
 
 export const StyledTextInput = styled.input<IInput>(({ theme, invalid }) => {
-  const borde = invalid ? `${theme.colors.primary}` : `${theme.colors.white}`;
-  const outline = invalid ? `${theme.colors.primaryDark}` : "transparent";
-  const label = invalid
-    ? `${theme.colors.primaryDark}`
-    : `${theme.colors.white}`;
-  const text = invalid
-    ? `${theme.colors.primaryDark}`
-    : `${theme.colors.white}`;
+  const borde = invalid ? "red" : `${theme.colors.white}`;
+  const outline = invalid ? "red" : "transparent";
+  const label = invalid ? "red" : `${theme.colors.white}`;
+  const text = invalid ? "red" : `${theme.colors.white}`;
   return css`
     padding: 10px 10px 10px 16px;
     display: block;
@@ -44,7 +40,7 @@ export const StyledTextInput = styled.input<IInput>(({ theme, invalid }) => {
     height: 48px;
     transition: all 0.3s ease-out;
     &:focus {
-      outline: 1px solid ${theme.colors.white};
+      outline: 1px solid ${invalid ? "red" : theme.colors.white};
     }
     &:focus ~ label {
       transform: translate(10px, -14px) scale(0.8);
@@ -66,9 +62,7 @@ export const StyledTextInput = styled.input<IInput>(({ theme, invalid }) => {
 
 export const StyledTextInputLabel = styled.label<IInput>(
   ({ theme, invalid }) => {
-    const color = invalid
-      ? `${theme.colors.primaryDark}`
-      : `${theme.colors.white}`;
+    const color = invalid ? "red" : `${theme.colors.white}`;
     return css`
       position: absolute;
       top: 0;
@@ -92,9 +86,10 @@ export const StyledTextInputError = styled.span(
   ({ theme }) => css`
     display: block;
     height: 12px;
-    color: ${theme.colors.primaryDark};
+    color: red;
     font-size: 12px;
-    margin-bottom: 8px;
+    font-weight: 500;
+    margin: 4px 0 8px 4px;
   `
 );
 

@@ -1,13 +1,22 @@
 import { Formik, Form } from "formik";
 import {
+  StyledContactButton,
+  StyledContactButtonContainer,
   StyledContactContainer,
   StyledContactFormContainer,
+  StyledContactMessage,
   StyledContactTextArea,
 } from "./Contact.styled";
 import { TextInput } from "@/components/atoms/TextInput/TextInput.component";
 import Layout from "@/components/atoms/Layout/Layout.component";
-
+import { submitForm } from "@/services/app.services";
+import { contactFormValidation } from "@/validations/validations";
+import Spin from "@/components/atoms/Spin/Spin.component";
+import { useState } from "react";
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
+  const [validated, setValidated] = useState(false);
+  const [message, setMessage] = useState("");
   return (
     <StyledContactContainer id="contact">
       <Layout>
@@ -16,9 +25,22 @@ const Contact = () => {
           <StyledContactFormContainer>
             <Formik
               initialValues={{ name: "", email: "", message: "" }}
+              validationSchema={contactFormValidation}
               validateOnBlur={false}
-              validateOnChange={true}
-              onSubmit={() => {}}
+              validateOnChange={validated}
+              onSubmit={async (values) => {
+                setLoading(true);
+                const response = await submitForm(values);
+                console.log(response?.["ok"]);
+                setLoading(false);
+                if (response?.["ok"]) {
+                  setMessage("Your message has been sent successfully ✔");
+                } else {
+                  setMessage(
+                    "An error occurred while sending the message. Please try again"
+                  );
+                }
+              }}
             >
               {({
                 values,
@@ -30,7 +52,7 @@ const Contact = () => {
                 isSubmitting,
               }) => {
                 return (
-                  <Form onSubmit={handleSubmit}>
+                  <Form onSubmit={handleSubmit} noValidate>
                     <div>
                       <TextInput
                         id="name"
@@ -47,7 +69,7 @@ const Contact = () => {
                       <TextInput
                         id="email"
                         name="email"
-                        type="text"
+                        type="email"
                         value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -57,10 +79,28 @@ const Contact = () => {
                         required
                       />
                     </div>
-                    <StyledContactTextArea>
+                    <StyledContactTextArea
+                      invalid={errors.message ? true : false}
+                    >
                       <label htmlFor="text">Your message</label>
-                      <textarea name="text" id="text" rows={5}></textarea>
+                      <textarea
+                        name="message"
+                        id="message"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        rows={5}
+                      ></textarea>
+                      <span>{errors.message}</span>
                     </StyledContactTextArea>
+                    <StyledContactButtonContainer>
+                      <StyledContactButton
+                        type="submit"
+                        onClick={() => (loading ? {} : setValidated(true))}
+                      >
+                        {loading ? <Spin /> : "Send"}
+                      </StyledContactButton>
+                      <StyledContactMessage>{message}</StyledContactMessage>
+                    </StyledContactButtonContainer>
                   </Form>
                 );
               }}

@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const StyledCompetencesContainer = styled.section`
   display: flex;
-  background-color: #070a10;
+  background: #070a10;
   min-height: 100vh;
   padding: 2rem 0;
   & > div {

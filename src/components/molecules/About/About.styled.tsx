@@ -1,3 +1,4 @@
+import { staticAsset } from "@/utils/urlHelper";
 import styled, { css } from "styled-components";
 
 export const StyledAboutContainer = styled.section(
@@ -70,6 +71,21 @@ export const StyledAboutContent = styled.div(
         p {
           text-align: start;
           text-indent: 40px;
+        }
+      }
+    }
+    @media (max-width: ${theme.breakpoints.medium}) {
+      & > div:first-of-type {
+        display: none;
+      }
+    }
+    @media (max-width: ${theme.breakpoints.small}) {
+      & > div:last-of-type {
+        p {
+          font-size: 16px;
+        }
+        p:last-of-type {
+          display: none;
         }
       }
     }

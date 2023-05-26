@@ -15,13 +15,18 @@ const Competences = () => {
       items: 4,
       slidesToSlide: 1,
     },
+    laptop: {
+      breakpoint: { max: 1140, min: 576 },
+      items: 3,
+      slidesToSlide: 1,
+    },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 768, min: 576 },
       items: 2,
-      slidesToSlide: 2,
+      slidesToSlide: 1,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 576, min: 0 },
       items: 1,
       slidesToSlide: 1,
     },

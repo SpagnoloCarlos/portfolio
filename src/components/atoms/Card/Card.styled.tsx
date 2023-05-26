@@ -6,6 +6,7 @@ export const StyledCardContainer = styled.div(
     width: 250px;
     height: 300px;
     perspective: 1000px;
+    margin: 0 auto;
 
     &:hover .flip-card-inner {
       transform: rotateY(-180deg);
@@ -30,14 +31,26 @@ export const StyledCardContainer = styled.div(
     }
 
     .flip-card-front {
-      background-color: #1b1b1b;
+      background: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.05),
+        rgba(255, 255, 255, 0.05)
+      );
+      backdrop-filter: blur(5px);
+      /* background-color: #1b1b1b; */
       color: black;
       display: grid;
       place-items: center;
     }
 
     .flip-card-back {
-      background-color: #1b1b1b;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(0, 0, 0, 0.05)
+      );
+      backdrop-filter: blur(5px);
+      /* background-color: #1b1b1b; */
       padding: 2rem 1rem;
       color: #fff;
       transform: rotateY(180deg);

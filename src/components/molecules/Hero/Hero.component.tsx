@@ -19,8 +19,8 @@ const Hero = () => {
           <Image
             src={staticAsset("images/pics/image_hero.png")}
             alt="Spagnolo Carlos"
-            width={500}
-            height={500}
+            width={400}
+            height={400}
           />
         </StyledHeroImage>
       </Layout>
