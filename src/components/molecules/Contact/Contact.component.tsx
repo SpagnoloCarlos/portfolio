@@ -31,7 +31,6 @@ const Contact = () => {
               onSubmit={async (values) => {
                 setLoading(true);
                 const response = await submitForm(values);
-                console.log(response?.["ok"]);
                 setLoading(false);
                 if (response?.["ok"]) {
                   setMessage("Your message has been sent successfully ✔");
