@@ -20,7 +20,7 @@ export default function Homes() {
       </Head>
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-772BY1J49F"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       ></Script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
